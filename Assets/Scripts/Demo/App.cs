@@ -13,6 +13,9 @@ public class App : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Game.Instance.Init();
+        NetModule.Instance.Init();
+
+        LoginLogic.Instance.Init();
 
         CtrlManager.Instance.OpenCtrl(CtrlNames.UILoading);
 	}

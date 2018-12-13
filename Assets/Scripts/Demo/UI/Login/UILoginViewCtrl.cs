@@ -4,6 +4,7 @@
 //备    注：
 //===================================================
 
+using Msg;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,5 +20,13 @@ public class UILoginViewCtrl : BaseCtrl
     {
         CtrlManager.Instance.OpenCtrl(CtrlNames.UIRegiste);
         CtrlManager.Instance.CloseCtrl(CtrlNames.UILogin);
+    }
+
+    public void Login(string name, string password)
+    {
+        Login login = new Login();
+        login.Account = name;
+        login.Passward = password;
+        LoginLogic.Instance.Login(login);
     }
 }

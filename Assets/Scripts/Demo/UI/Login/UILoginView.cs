@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class UILoginView : BaseView{
     UILoginViewCtrl _iCtrl;
 
+    Button loginBtn;
     Button regBtn;
 
     public override string PrefabPath()
@@ -22,6 +23,9 @@ public class UILoginView : BaseView{
     public override void StartView(params object[] args) {
         _iCtrl = (UILoginViewCtrl)iCtrl;
 
+        loginBtn = this.transform.Find("center/loginBtn").GetComponent<Button>();
+        loginBtn.onClick.AddListener(OnLoginBtnClick);
+
         regBtn = this.transform.Find("center/registerBtn").GetComponent<Button>();
         regBtn.onClick.AddListener(OnRegBtnClick);
     }
@@ -29,5 +33,10 @@ public class UILoginView : BaseView{
     void OnRegBtnClick()
     {
         _iCtrl.ShowRegView();
+    }
+
+    void OnLoginBtnClick()
+    {
+        _iCtrl.Login("123", "456");
     }
 }

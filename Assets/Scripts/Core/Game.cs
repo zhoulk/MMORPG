@@ -30,5 +30,7 @@ public class Game : Singleton<Game> {
             canvasObj.AddComponent<DontDestroy>();
             ViewManager.Instance.CancasObj = canvasObj;
         }
+
+        NetManager.Instance.Init();
     }
 }

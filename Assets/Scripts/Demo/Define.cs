@@ -4,11 +4,9 @@
 //备    注：
 //===================================================
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Define  {
+    public static string IP = "127.0.0.1";
+    public static int port = 7000;
 }
 
 public class CtrlNames

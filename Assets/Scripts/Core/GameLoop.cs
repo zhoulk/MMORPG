@@ -16,6 +16,7 @@ public class GameLoop : MonoBehaviour {
         StartCoroutine(ExecuteCoroutine());
 
         ViewManager.Instance.OnUpdate();
+        NetManager.Instance.OnUpdate();
     }
 
     private void LateUpdate()
